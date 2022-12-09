@@ -32,11 +32,21 @@ void RSABigInt::init(BigInt &p, BigInt &q)
     cout << "\nGenerated 'phi' :" << endl;
     phi.showDigits();
     eCalculate(phi, e);
-    cout << "\nGenerated 'e' :" << endl;
+    cout << "\nPublic key (n, e) :" << endl;
+    cout << "(";
+    N.showDigits();
+    cout << ", ";
     e.showDigits();
+    cout << ")\n";
+    
+    
     CalculateD(e, phi, d);
-    cout << "\nGenerated 'd' :" << endl;
+    cout << "\nPrivate key (n, d) :" << endl;
+    cout << "("; 
+    N.showDigits();
+    cout << ", ";
     d.showDigits();
+    cout << ")\n";
 }
 
 void RSABigInt::eCalculate(BigInt &phi, BigInt &result)
